@@ -1,17 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import {
+  useHistory
+} from 'react-router-dom';
 
 import { Nav, NavGroup, NavList, NavItem, PageSidebar } from '@patternfly/react-core';
 
-export default function Sidebar({ onNavSelect, activeItem }) {
+export default function Sidebar() {
+  const history = useHistory();
+  const [route, setRoute] = useState('/');
+  const mapping = ['/', '/acm'];
+  const onSelect = ({ itemId }) => {
+    const newRoute = mapping[itemId];
+    setRoute(newRoute);
+    history.push(newRoute);
+  };
   const PageNav = (
-    <Nav onSelect={onNavSelect} aria-label="Nav">
+    <Nav onSelect={onSelect} aria-label="Nav">
       <NavGroup title="OpenShift">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} isActive={route === mapping[0]}>
             Basics
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} isActive={route === mapping[1]}>
             Advanced Cluster Management
           </NavItem>
         </NavList>
@@ -20,11 +30,3 @@ export default function Sidebar({ onNavSelect, activeItem }) {
   );
   return <PageSidebar nav={PageNav} />;
 };
-
-Sidebar.propTypes = {
-  onNavSelect: PropTypes.func.isRequired,
-  activeItem: PropTypes.number
-};
-Sidebar.defaultProps = {
-  activeItem: 0
-}

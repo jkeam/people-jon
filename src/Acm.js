@@ -49,7 +49,7 @@ export default function Home() {
                       </small>
                     </FlexItem>
                     <FlexItem>
-                        <video width="400" controls autoplay>
+                        <video width="400" controls>
                           <source src={acmMovie} type="video/mp4" />
                         </video>
                     </FlexItem>
@@ -75,7 +75,7 @@ export default function Home() {
                       </small>
                     </FlexItem>
                     <FlexItem>
-                        <video width="400" controls autoplay>
+                        <video width="400" controls>
                           <source src={acmPolicyMovie} type="video/mp4" />
                         </video>
                     </FlexItem>
