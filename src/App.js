@@ -10,7 +10,7 @@ import Home from './Home';
 import Acm from './Acm';
 import { Page } from '@patternfly/react-core';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
