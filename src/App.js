@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "@patternfly/react-core/dist/styles/base.css";
 
 import './fonts.css';
@@ -9,17 +9,19 @@ import ContentSkip from './nav/ContentSkip';
 import Home from './Home';
 import Acm from './Acm';
 import { Page } from '@patternfly/react-core';
+import {
+  HashRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 export default function App() {
-  const [activeItem, setActiveItem] = useState(0);
-  const onNavSelect = ({ itemId }) => setActiveItem(itemId);
-
   const pageId = 'main-content-page-layout-default-nav';
   const pageSkipToContent = <ContentSkip pageId={pageId} />;
-  const sidebar = <Sidebar onNavSelect={onNavSelect} activeItem={activeItem} />;
+  const sidebar = <Sidebar />;
   const header = <Header />;
   return (
-    <>
+    <Router>
       <Page
         header={header}
         sidebar={sidebar}
@@ -27,9 +29,15 @@ export default function App() {
         skipToContent={pageSkipToContent}
         mainContainerId={pageId}
       >
-        { activeItem === 0 && <Home /> }
-        { activeItem === 1 && <Acm /> }
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/acm">
+            <Acm />
+          </Route>
+        </Switch>
       </Page>
-    </>
+    </Router>
   );
 }
