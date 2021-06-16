@@ -25,3 +25,6 @@ target
 
 src/assets/**.mp4
 src/assets/**.mov
+
+venv
+.nvmrc

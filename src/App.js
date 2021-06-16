@@ -8,6 +8,7 @@ import Header from './nav/Header';
 import ContentSkip from './nav/ContentSkip';
 import Home from './Home';
 import Acm from './Acm';
+import Acs from './Acs';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -35,6 +36,9 @@ export default function App() {
           </Route>
           <Route path="/acm">
             <Acm />
+          </Route>
+          <Route path="/acs">
+            <Acs />
           </Route>
         </Switch>
       </Page>

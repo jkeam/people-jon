@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   useHistory,
   useLocation
@@ -9,7 +9,7 @@ import { Nav, NavGroup, NavList, NavItem, PageSidebar } from '@patternfly/react-
 export default function Sidebar() {
   const history = useHistory();
   const route = useLocation();
-  const mapping = ['/', '/acm'];
+  const mapping = ['/', '/acm', '/acs'];
   const onSelect = ({ itemId }) => history.push(mapping[itemId]);
   const PageNav = (
     <Nav onSelect={onSelect} aria-label="Nav">
@@ -20,6 +20,9 @@ export default function Sidebar() {
           </NavItem>
           <NavItem itemId={1} isActive={route.pathname === mapping[1]}>
             Advanced Cluster Management
+          </NavItem>
+          <NavItem itemId={2} isActive={route.pathname === mapping[2]}>
+            Advanced Cluster Security
           </NavItem>
         </NavList>
       </NavGroup>

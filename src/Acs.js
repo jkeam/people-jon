@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Title from './common/Title';
-import acmMovie from './assets/rhacm_networking_check.mov';
-import acmPolicyMovie from './assets/acm_application_policy.mp4';
+import scanning from './assets/stackrox_scanning.mov';
 import {
   PageSection,
   Divider,
@@ -23,7 +22,7 @@ import {
   Title as PTitle
 } from '@patternfly/react-core';
 
-export default function Acm() {
+export default function Acs() {
   const [drawerExpanded, setDrawerExpanded] = useState(false);
   const [selectedDataListItemId, setSelectedDataListItemId] = useState(0);
   const drawerContent = (
@@ -43,44 +42,18 @@ export default function Acm() {
                 <DataListCell key="primary content">
                   <Flex direction={{ default: 'column' }}>
                     <FlexItem>
-                      <p>Networking</p>
+                      <p>Image Scanning</p>
                       <small>
-                        Diagnose networking connectivity issues
+                        Use the Advanced Cluster Security scanning tool via command line to scan your images.
                       </small>
                     </FlexItem>
                     <FlexItem>
                         <video width="400" controls>
-                          <source src={acmMovie} type="video/mp4" />
+                          <source src={scanning} type="video/mp4" />
                         </video>
                     </FlexItem>
                     <Flex>
-                      <FlexItem>Video uploaded June 10, 2021</FlexItem>
-                    </Flex>
-                  </Flex>
-                </DataListCell>
-              ]}
-            />
-          </DataListItemRow>
-        </DataListItem>
-        <DataListItem id="content-padding-item2">
-          <DataListItemRow>
-            <DataListItemCells
-              dataListCells={[
-                <DataListCell key="primary content">
-                  <Flex direction={{ default: 'column' }}>
-                    <FlexItem>
-                      <p>GitOps Policy</p>
-                      <small>
-                        Applying Scan Policies via Git
-                      </small>
-                    </FlexItem>
-                    <FlexItem>
-                        <video width="400" controls>
-                          <source src={acmPolicyMovie} type="video/mp4" />
-                        </video>
-                    </FlexItem>
-                    <Flex>
-                      <FlexItem>Video uploaded June 10, 2021</FlexItem>
+                      <FlexItem>Video uploaded June 16, 2021</FlexItem>
                     </Flex>
                   </Flex>
                 </DataListCell>
@@ -96,7 +69,6 @@ export default function Acm() {
       <DrawerHead>
         <PTitle headingLevel="h2" size="xl">
           { selectedDataListItemId === 'content-padding-item1' && 'Networking' }
-          { selectedDataListItemId === 'content-padding-item2' && 'GitOps Policy' }
         </PTitle>
         <DrawerActions>
           <DrawerCloseButton onClick={() => {
@@ -109,8 +81,7 @@ export default function Acm() {
         <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
           <FlexItem>
             <p>
-              { selectedDataListItemId === 'content-padding-item1' && 'If the Hub and Managed cluster are unable to communicate, there are a few basic networking diagnostic steps you can take to see if they can communicate.  This video goes through how you can do this using netcat `nc`.' }
-              { selectedDataListItemId === 'content-padding-item2' && 'This video goes through how to create a policy that ccreates some ScanSettingBindings for use with the compliance operator.  Doing it from ACM means you can manage all this in one place.' }
+              { selectedDataListItemId === 'content-padding-item1' && 'Creating policies and then being able to scan your images via command line is a powerful concept.  Developers can tap into it as they develop and you can use it as part of your pipelines as you deploy your images.  This demo walks through creating a policy and then invoking image scans against your policies all via the command line.' }
             </p>
           </FlexItem>
         </Flex>
@@ -119,7 +90,7 @@ export default function Acm() {
   );
   return(
     <>
-      <Title value="OpenShift" subtitle="Advanced Cluster Management" />
+      <Title value="OpenShift" subtitle="Advanced Cluster Security" />
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }}>
         <Drawer isExpanded={drawerExpanded}>
