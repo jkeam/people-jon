@@ -68,7 +68,7 @@ export default function Acs() {
     <DrawerPanelContent>
       <DrawerHead>
         <PTitle headingLevel="h2" size="xl">
-          { selectedDataListItemId === 'content-padding-item1' && 'Networking' }
+          { selectedDataListItemId === 'content-padding-item1' && 'Image Scanning' }
         </PTitle>
         <DrawerActions>
           <DrawerCloseButton onClick={() => {
