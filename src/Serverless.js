@@ -21,7 +21,7 @@ import {
 } from '@patternfly/react-core';
 import Title from './common/Title';
 import ServerlessImage from './assets/serverless.png';
-import EdaImage from './assets/eda.png';
+import EdaMovie from './assets/eda.mp4';
 
 export default function Serverless() {
   const [drawerExpanded, setDrawerExpanded] = useState(false);
@@ -49,12 +49,9 @@ export default function Serverless() {
                       </small>
                     </FlexItem>
                     <FlexItem>
-                      <a href="https://carahevents.carahsoft.com/Event/Details/224562-redhat" target="_blank" rel="noopener noreferrer">
-                        <img src={EdaImage} alt="Event Driven Architecture" />
-                        <figcaption>
-                          Application Modernization Using Event-Driven Architecture
-                        </figcaption>
-                      </a>
+                        <video width="400" controls>
+                          <source src={EdaMovie} type="video/mp4" />
+                        </video>
                     </FlexItem>
                     <Flex>
                       <FlexItem>Video uploaded June 22, 2021</FlexItem>
