@@ -9,6 +9,7 @@ import ContentSkip from './nav/ContentSkip';
 import Home from './Home';
 import Acm from './Acm';
 import Acs from './Acs';
+import Serverless from './Serverless';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -39,6 +40,9 @@ export default function App() {
           </Route>
           <Route path="/acs">
             <Acs />
+          </Route>
+          <Route path="/serverless">
+            <Serverless />
           </Route>
         </Switch>
       </Page>
