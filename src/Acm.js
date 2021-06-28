@@ -20,8 +20,6 @@ import {
   Title as PTitle
 } from '@patternfly/react-core';
 import Title from './common/Title';
-import acmMovie from './assets/rhacm_networking_check.mov';
-import acmPolicyMovie from './assets/acm_application_policy.mp4';
 
 export default function Acm() {
   const [drawerExpanded, setDrawerExpanded] = useState(false);
@@ -50,7 +48,7 @@ export default function Acm() {
                     </FlexItem>
                     <FlexItem>
                         <video width="400" controls>
-                          <source src={acmMovie} type="video/mp4" />
+                          <source src="https://jkeam-people.s3.amazonaws.com/rhacm_networking_check.mov" type="video/mp4" />
                         </video>
                     </FlexItem>
                     <Flex>
@@ -76,7 +74,7 @@ export default function Acm() {
                     </FlexItem>
                     <FlexItem>
                         <video width="400" controls>
-                          <source src={acmPolicyMovie} type="video/mp4" />
+                          <source src="https://jkeam-people.s3.amazonaws.com/acm_application_policy.mp4" type="video/mp4" />
                         </video>
                     </FlexItem>
                     <Flex>

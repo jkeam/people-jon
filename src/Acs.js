@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Title from './common/Title';
-import scanning from './assets/stackrox_scanning.mov';
 import {
   PageSection,
   Divider,
@@ -21,6 +19,7 @@ import {
   DataListItemRow,
   Title as PTitle
 } from '@patternfly/react-core';
+import Title from './common/Title';
 
 export default function Acs() {
   const [drawerExpanded, setDrawerExpanded] = useState(false);
@@ -49,7 +48,7 @@ export default function Acs() {
                     </FlexItem>
                     <FlexItem>
                         <video width="400" controls>
-                          <source src={scanning} type="video/mp4" />
+                          <source src="https://jkeam-people.s3.amazonaws.com/stackrox_scanning.mov" type="video/mp4" />
                         </video>
                     </FlexItem>
                     <Flex>

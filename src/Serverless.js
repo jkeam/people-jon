@@ -20,8 +20,6 @@ import {
   Title as PTitle
 } from '@patternfly/react-core';
 import Title from './common/Title';
-import ServerlessImage from './assets/serverless.png';
-import EdaMovie from './assets/eda.mp4';
 
 export default function Serverless() {
   const [drawerExpanded, setDrawerExpanded] = useState(false);
@@ -50,7 +48,7 @@ export default function Serverless() {
                     </FlexItem>
                     <FlexItem>
                         <video width="400" controls>
-                          <source src={EdaMovie} type="video/mp4" />
+                          <source src="https://jkeam-people.s3.amazonaws.com/eda.mp4" type="video/mp4" />
                         </video>
                     </FlexItem>
                     <Flex>
@@ -76,7 +74,7 @@ export default function Serverless() {
                     </FlexItem>
                     <FlexItem>
                      <a href="https://www.brighttalk.com/webcast/16623/432634/optimizing-serverless-and-openshift-with-knative" target="_blank" rel="noopener noreferrer">
-                        <img src={ServerlessImage} alt="OpenShift Serverless" />
+                        <img src="https://jkeam-people.s3.amazonaws.com/serverless.png" alt="OpenShift Serverless" />
                         <figcaption>
                           Optimizing Serverless and OpenShift with Knative
                         </figcaption>
