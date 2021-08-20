@@ -10,6 +10,7 @@ import Home from './Home';
 import Acm from './Acm';
 import Acs from './Acs';
 import Serverless from './Serverless';
+import SSO from './SSO';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -43,6 +44,9 @@ export default function App() {
           </Route>
           <Route path="/serverless">
             <Serverless />
+          </Route>
+          <Route path="/sso">
+            <SSO />
           </Route>
         </Switch>
       </Page>
