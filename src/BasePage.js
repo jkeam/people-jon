@@ -35,7 +35,7 @@ export default function BasePage({ children, title, subtitle, cells }) {
         }}
       >
         { (cells || []).map((cell, index) => (
-          <DataListItem id={index}>
+          <DataListItem id={index + 1}>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -48,9 +48,17 @@ export default function BasePage({ children, title, subtitle, cells }) {
                         </small>
                       </FlexItem>
                       <FlexItem>
-                          <video width="400" controls>
-                            <source src={cell.videoUrl} type="video/mp4" />
-                          </video>
+                          { cell.videoUrl && (
+                            <video width="400" controls>
+                             <source src={cell.videoUrl} type="video/mp4" />
+                            </video>
+                          )}
+                          { cell.linkUrl && (
+                            <a href={cell.linkUrl} target="_blank" rel="noopener noreferrer">
+                            { cell.imageUrl && <img src={cell.imageUrl} alt={cell.imageAltText || ''} /> }
+                            </a>
+                          )}
+
                       </FlexItem>
                       <Flex>
                         <FlexItem>Video uploaded {cell.lastModifiedDate}</FlexItem>
@@ -69,7 +77,7 @@ export default function BasePage({ children, title, subtitle, cells }) {
     <DrawerPanelContent>
       <DrawerHead>
         <PTitle headingLevel="h2" size="xl">
-          { (cells[selectedDataListItemId] || {}).title }
+          { (cells[selectedDataListItemId - 1] || {}).title }
         </PTitle>
         <DrawerActions>
           <DrawerCloseButton onClick={() => {
@@ -82,7 +90,7 @@ export default function BasePage({ children, title, subtitle, cells }) {
         <Flex spaceItems={{ default: 'spaceItemsLg' }} direction={{ default: 'column' }}>
           <FlexItem>
             <p>
-              { (cells[selectedDataListItemId] || {}).description }
+              { (cells[selectedDataListItemId - 1] || {}).description }
             </p>
           </FlexItem>
         </Flex>
