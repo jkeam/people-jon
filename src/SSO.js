@@ -3,17 +3,17 @@ import BasePage from './BasePage';
 
 export default function SSO() {
   const cells = [{
-    title: 'Event Driven Architecture Introduction',
-    subtitle: 'Introduction and benefits of going event driven',
-    videoUrl: 'https://jkeam-people.s3.amazonaws.com/eda.mp4',
-    lastModifiedDate: 'June 22, 2021',
-    description: 'Advances in technology, such as microservices and containers, continue to transform how agencies operate. Event-driven architecture (EDA), a software architecture and model for application design, is quickly becoming a preferred method for capturing insights and communicating changes instantly for improved customer experience. This talk exploreses these topics and talks specifically how the USDA can use EDA to achieve a flexible system that can adapt to changes and make decisions in real-time.'
+    title: 'SSO Demo',
+    subtitle: 'Uses external Identity Provider and External User Federated Database',
+    videoUrl: 'https://jkeam-people.s3.amazonaws.com/keycloak_demo.mov',
+    lastModifiedDate: 'Aug 20, 2021',
+    description: 'Keycloak is an extremely powerful standards based authorization and authentication mechanism.  Security and security tools can sometimes be non-intuitive to setup and configure.  This demo walks through how to set up a local development environment where you can use and extend the capabilities of SSO through custom mappers and service provider interfaces.'
   }, {
-    title: 'junk',
-    subtitle: 'desc',
-    videoUrl: 'blah',
-    lastModifiedDate: 'date',
-    description: 'Serverless computing allows developers to optimize their application usage, by executing and billing on application resource consumption. Traditionally this execution model was offered by cloud providers in a non-portable manner. Today - the serverless paradigm is offered in OpenShift via the Knative upstream project, adding a key toolkit for developers to build portable, cloud native applications in hybrid and multi-cloud environments.  This is a fireside chat to learn about this new development paradigm and how it can be effectively leveraged in your organization or government agency.'
+    title: 'SSO Demo Code',
+    subtitle: 'Code walkthrough for the SSO Demo',
+    videoUrl: 'https://jkeam-people.s3.amazonaws.com/keycloak_code.mov',
+    lastModifiedDate: 'Aug 20, 2021',
+    description: 'The SSO Demo walks through how to setup your environment and how to perform the demo, but does not touch on the code.  This video walks through why and how the code is structured as well as goes through the key concepts for each Java class.'
   }];
   return <BasePage cells={cells} subtitle="SSO" />;
 }
