@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   PageSection,
   Divider,
@@ -21,7 +22,7 @@ import {
 } from '@patternfly/react-core';
 import Title from './common/Title';
 
-export default function BasePage({ children, title, subtitle, cells }) {
+export default function BasePage({ title, subtitle, cells }) {
   const [drawerExpanded, setDrawerExpanded] = useState(false);
   const [selectedDataListItemId, setSelectedDataListItemId] = useState(0);
   const drawerContent = (
@@ -35,7 +36,7 @@ export default function BasePage({ children, title, subtitle, cells }) {
         }}
       >
         { (cells || []).map((cell, index) => (
-          <DataListItem id={index + 1}>
+          <DataListItem id={index + 1} key={index}>
             <DataListItemRow>
               <DataListItemCells
                 dataListCells={[
@@ -55,13 +56,19 @@ export default function BasePage({ children, title, subtitle, cells }) {
                           )}
                           { cell.linkUrl && (
                             <a href={cell.linkUrl} target="_blank" rel="noopener noreferrer">
-                            { cell.imageUrl && <img src={cell.imageUrl} alt={cell.imageAltText || ''} /> }
+                              { cell.imageUrl && <img src={cell.imageUrl} alt={cell.imageAltText || ''} /> }
+                              <figcaption>
+                                {cell.imageAltText || ''}
+                              </figcaption>
                             </a>
                           )}
-
+                          { cell.youtubeUrl && (
+                            <iframe width="400" height="250" src={cell.youtubeUrl} title={cell.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                          )}
                       </FlexItem>
                       <Flex>
-                        <FlexItem>Video uploaded {cell.lastModifiedDate}</FlexItem>
+                        { cell.type === 'blog' && <FlexItem>Written {cell.lastModifiedDate}</FlexItem> }
+                        { !cell.type && <FlexItem>Video uploaded {cell.lastModifiedDate}</FlexItem> }
                       </Flex>
                     </Flex>
                   </DataListCell>
@@ -99,7 +106,7 @@ export default function BasePage({ children, title, subtitle, cells }) {
   );
   return(
     <>
-      <Title value={title || 'OpenShift'} subtitle={subtitle} />
+      <Title value={title} subtitle={subtitle} />
       <Divider component="div" />
       <PageSection padding={{ default: 'noPadding' }}>
         <Drawer isExpanded={drawerExpanded}>
@@ -112,3 +119,23 @@ export default function BasePage({ children, title, subtitle, cells }) {
   );
 }
 
+BasePage.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  cells: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    videoUrl: PropTypes.string,
+    linkUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    imageAltText: PropTypes.string,
+    youtubeUrl: PropTypes.string,
+    type: PropTypes.string,
+    lastModifiedDate: PropTypes.string
+  }))
+};
+BasePage.defaultProps = {
+  title: 'OpenShift',
+  subtitle: '',
+  cells: []
+};
