@@ -14,6 +14,12 @@ export default function Acm() {
     videoUrl: 'https://jkeam-people.s3.amazonaws.com/acm_application_policy.mp4',
     lastModifiedDate: 'June 10, 2021',
     description: 'This video goes through how to create a policy that ccreates some ScanSettingBindings for use with the compliance operator.  Doing it from ACM means you can manage all this in one place.'
+  }, {
+    title: 'Installing ACS',
+    subtitle: 'Using policies to install Advanced Cluster Security for Kubernetes',
+    videoUrl: 'https://jkeam-people.s3.amazonaws.com/acm_acs.mov',
+    lastModifiedDate: 'Aug 25, 2021',
+    description: 'There are lots of ways to install Stackrox, now called Advanced Cluster Security for Kubernetes. A very popular approach is to use ACM policies to do so. This is a natural approach as ACM policies are a good way to ensure the correct configuration of Kubernetes clusters, including that the right operators are installed.'
   }];
   return <BasePage cells={cells} subtitle="Advanced Cluster Management" />;
 }
