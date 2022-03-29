@@ -9,7 +9,7 @@ import { Nav, NavList, NavItem, PageSidebar } from '@patternfly/react-core';
 export default function Sidebar() {
   const history = useHistory();
   const route = useLocation();
-  const mapping = ['/', '/acm', '/acs', '/serverless', '/sso'];
+  const mapping = ['/', 'config', '/acm', '/acs', '/serverless', '/sso'];
   const onSelect = ({ itemId }) => history.push(mapping[itemId]);
   const PageNav = (
     <Nav onSelect={onSelect} aria-label="Nav">
@@ -18,15 +18,18 @@ export default function Sidebar() {
           OpenShift Basics
         </NavItem>
         <NavItem itemId={1} isActive={route.pathname === mapping[1]}>
-          Advanced Cluster Management
+          OpenShift Configuration
         </NavItem>
         <NavItem itemId={2} isActive={route.pathname === mapping[2]}>
-          Advanced Cluster Security
+          Advanced Cluster Management
         </NavItem>
         <NavItem itemId={3} isActive={route.pathname === mapping[3]}>
-          Serverless
+          Advanced Cluster Security
         </NavItem>
         <NavItem itemId={4} isActive={route.pathname === mapping[4]}>
+          Serverless
+        </NavItem>
+        <NavItem itemId={5} isActive={route.pathname === mapping[5]}>
           SSO
         </NavItem>
       </NavList>

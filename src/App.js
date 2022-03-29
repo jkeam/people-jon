@@ -11,6 +11,7 @@ import Acm from './Acm';
 import Acs from './Acs';
 import Serverless from './Serverless';
 import SSO from './SSO';
+import OcpConfig from './OcpConfig';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -35,6 +36,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/config">
+            <OcpConfig />
           </Route>
           <Route path="/acm">
             <Acm />
