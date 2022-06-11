@@ -12,6 +12,7 @@ import Acs from './Acs';
 import Serverless from './Serverless';
 import SSO from './SSO';
 import OcpConfig from './OcpConfig';
+import Threescale from './Threescale';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -51,6 +52,9 @@ export default function App() {
           </Route>
           <Route path="/sso">
             <SSO />
+          </Route>
+          <Route path="/threescale">
+            <Threescale />
           </Route>
         </Switch>
       </Page>
