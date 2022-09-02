@@ -15,6 +15,7 @@ import OcpConfig from './OcpConfig';
 import Threescale from './Threescale';
 import Pipeline from './Pipeline';
 import Quarkus from './Quarkus';
+import Bpm from './Bpm';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -63,6 +64,9 @@ export default function App() {
           </Route>
           <Route path="/quarkus">
             <Quarkus />
+          </Route>
+          <Route path="/bpm">
+            <Bpm />
           </Route>
         </Switch>
       </Page>
