@@ -16,6 +16,7 @@ import Threescale from './Threescale';
 import Pipeline from './Pipeline';
 import Quarkus from './Quarkus';
 import Bpm from './Bpm';
+import Ai from './Ai';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -67,6 +68,9 @@ export default function App() {
           </Route>
           <Route path="/bpm">
             <Bpm />
+          </Route>
+          <Route path="/ai">
+            <Ai />
           </Route>
         </Switch>
       </Page>
