@@ -17,6 +17,7 @@ import Pipeline from './Pipeline';
 import Quarkus from './Quarkus';
 import Bpm from './Bpm';
 import Ai from './Ai';
+import Devspace from './Devspace';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -71,6 +72,9 @@ export default function App() {
           </Route>
           <Route path="/ai">
             <Ai />
+          </Route>
+          <Route path="/devspace">
+            <Devspace />
           </Route>
         </Switch>
       </Page>

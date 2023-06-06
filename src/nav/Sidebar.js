@@ -9,7 +9,7 @@ import { Nav, NavList, NavItem, PageSidebar } from '@patternfly/react-core';
 export default function Sidebar() {
   const history = useHistory();
   const route = useLocation();
-  const mapping = ['/', '/config', '/acm', '/acs', '/serverless', '/sso', '/threescale', '/pipelines', '/quarkus', '/bpm', '/ai'];
+  const mapping = ['/', '/config', '/acm', '/acs', '/serverless', '/sso', '/threescale', '/pipelines', '/quarkus', '/bpm', '/ai', '/devspace'];
   const onSelect = ({ itemId }) => history.push(mapping[itemId]);
   const PageNav = (
     <Nav onSelect={onSelect} aria-label="Nav">
@@ -46,6 +46,9 @@ export default function Sidebar() {
         </NavItem>
         <NavItem itemId={10} isActive={route.pathname === mapping[10]}>
           AI/ML
+        </NavItem>
+        <NavItem itemId={11} isActive={route.pathname === mapping[11]}>
+          Dev Spaces
         </NavItem>
       </NavList>
     </Nav>
