@@ -29,7 +29,7 @@ export default function Serverless() {
   }, {
     title: 'Serverless Fireside Chat',
     subtitle: 'Conversation about Serverless and exploration of how OpenShift enables Serverless architectures',
-    linkUrl: 'https://www.brighttalk.com/webcast/16623/432634/optimizing-serverless-and-openshift-with-knative',
+    videoUrl: 'https://jkeam-people.s3.amazonaws.com/serverless-fireside-chat.mp4',
     imageUrl: 'https://jkeam-people.s3.amazonaws.com/serverless.png',
     imageAltText: 'OpenShift Serverless',
     lastModifiedDate: 'Oct 07, 2020',
