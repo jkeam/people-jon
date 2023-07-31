@@ -54,6 +54,18 @@ export default function BasePage({ title, subtitle, cells }) {
                              <source src={cell.videoUrl} type="video/mp4" />
                             </video>
                           )}
+                          { cell.youtubeId && (
+                            <iframe
+                              width="400"
+                              height="250"
+                              src={`https://www.youtube.com/embed/${cell.youtubeId}`}
+                              title={cell.title}
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen
+                            >
+                            </iframe>
+                          )}
                           { cell.linkUrl && (
                             <a href={cell.linkUrl} target="_blank" rel="noopener noreferrer">
                               { cell.imageUrl && <img src={cell.imageUrl} alt={cell.imageAltText || ''} /> }
@@ -61,9 +73,6 @@ export default function BasePage({ title, subtitle, cells }) {
                                 {cell.imageAltText || ''}
                               </figcaption>
                             </a>
-                          )}
-                          { cell.youtubeUrl && (
-                            <iframe width="400" height="250" src={cell.youtubeUrl} title={cell.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                           )}
                       </FlexItem>
                       <Flex>
@@ -129,7 +138,7 @@ BasePage.propTypes = {
     linkUrl: PropTypes.string,
     imageUrl: PropTypes.string,
     imageAltText: PropTypes.string,
-    youtubeUrl: PropTypes.string,
+    youtubeId: PropTypes.string,
     type: PropTypes.string,
     lastModifiedDate: PropTypes.string
   }))
