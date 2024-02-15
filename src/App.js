@@ -12,7 +12,7 @@ import Acs from './Acs';
 import Serverless from './Serverless';
 import SSO from './SSO';
 import OcpConfig from './OcpConfig';
-import Threescale from './Threescale';
+import Api from './Api';
 import Pipeline from './Pipeline';
 import Quarkus from './Quarkus';
 import Bpm from './Bpm';
@@ -58,8 +58,8 @@ export default function App() {
           <Route path="/sso">
             <SSO />
           </Route>
-          <Route path="/threescale">
-            <Threescale />
+          <Route path="/api">
+            <Api />
           </Route>
           <Route path="/pipelines">
             <Pipeline />
