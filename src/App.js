@@ -18,6 +18,7 @@ import Quarkus from './Quarkus';
 import Bpm from './Bpm';
 import Ai from './Ai';
 import Devspace from './Devspace';
+import Virt from './Virt';
 import { Page } from '@patternfly/react-core';
 import {
   HashRouter as Router,
@@ -75,6 +76,9 @@ export default function App() {
           </Route>
           <Route path="/devspace">
             <Devspace />
+          </Route>
+          <Route path="/virt">
+            <Virt />
           </Route>
         </Switch>
       </Page>
