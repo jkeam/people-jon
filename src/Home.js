@@ -3,6 +3,12 @@ import BasePage from './BasePage';
 
 export default function Home() {
   const cells = [{
+    title: 'OpenShift Managed Services',
+    subtitle: 'High level walkthrough of the OpenShift Managed Services offerings',
+    videoUrl: 'https://jkeam-people.s3.amazonaws.com/jkeam_tap_recording.mp4',
+    lastModifiedDate: 'May 21, 2024',
+    description: 'OpenShift is a completely app dev platform, but Managed OpenShift removes even the burden of installation and upgrades to enable teams to get started and go even faster.  This video does a high level overview and zooms in specifically on ROSA (AWS) and ARO (Azure).'
+  }, {
     title: 'OpenShift 101',
     subtitle: 'Intro to containers and what makes OpenShift different',
     youtubeId: 'uebe4r3C2Os',
