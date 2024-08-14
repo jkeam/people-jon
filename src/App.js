@@ -18,6 +18,7 @@ import Quarkus from './Quarkus';
 import Bpm from './Bpm';
 import Ai from './Ai';
 import Devspace from './Devspace';
+import Devhub from './Devhub';
 import Virt from './Virt';
 import { Page } from '@patternfly/react-core';
 import {
@@ -76,6 +77,9 @@ export default function App() {
           </Route>
           <Route path="/devspace">
             <Devspace />
+          </Route>
+          <Route path="/devhub">
+            <Devhub />
           </Route>
           <Route path="/virt">
             <Virt />
